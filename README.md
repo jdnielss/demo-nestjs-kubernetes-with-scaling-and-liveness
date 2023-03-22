@@ -7,6 +7,11 @@
 
 Hasil belajar tentang HPA ( Horizontal Pod Autoscaling ) dan liveness
 
+## Requirement
+1. Docker version 20.10.23, build 7155243
+2. Kubectl atau minikube
+3. kubernetes metrics <a href="https://github.com/kubernetes-sigs/metrics-server">Metric Server</a>
+
 ## Build Docker Image
 
 ```bash
