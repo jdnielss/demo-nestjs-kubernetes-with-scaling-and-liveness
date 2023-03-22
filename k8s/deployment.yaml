@@ -31,6 +31,8 @@ spec:
               value: 'root'
             - name: DATABASE_PASSWORD
               value: 'password'
+            - name: API_MASTER
+              value: ms-master
           resources:
             requests:
               cpu: 250m
@@ -44,7 +46,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: ms-nestjs
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 5
   metrics:
     - type: Resource

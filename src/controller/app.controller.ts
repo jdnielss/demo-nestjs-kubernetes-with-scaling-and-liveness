@@ -1,4 +1,6 @@
 import { Body, Controller, Get, Ip, Logger, Param, Post } from '@nestjs/common';
+import { AxiosResponse } from 'axios';
+import { Observable } from 'rxjs';
 import { User } from '../model/user.model';
 import { AppService } from '../service/app.service';
 
@@ -6,6 +8,11 @@ import { AppService } from '../service/app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
   private readonly logger = new Logger(AppController.name);
+
+  @Get('/check')
+  checkApiMaster(): Observable<string> {
+    return this.appService.checkApiMaster();
+  }
 
   @Get('/health')
   async health(): Promise<string> {
